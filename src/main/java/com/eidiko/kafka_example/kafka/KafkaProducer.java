@@ -1,13 +1,12 @@
 package com.eidiko.kafka_example.kafka;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-
+@Slf4j
 public class KafkaProducer {
-    private static final Logger LOGGER = LoggerFactory.getLogger(KafkaProducer.class);
     private final KafkaTemplate<String , String> kafkaTemplate;
 
     public KafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
@@ -15,7 +14,7 @@ public class KafkaProducer {
     }
 
     public void sendMessage(String message){
-        LOGGER.info("message sent {} ", message);
+        log.info("message sent {} ", message);
         kafkaTemplate.send("javaguides" , message);
     }
 }
