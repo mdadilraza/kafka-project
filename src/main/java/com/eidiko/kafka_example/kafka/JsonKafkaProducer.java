@@ -16,6 +16,7 @@ public class JsonKafkaProducer {
     public JsonKafkaProducer(KafkaTemplate<String, User> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
+
     public void sendMessage(User data){
         log.info("Message sent {} ", data);
         Message<User> message = MessageBuilder.
