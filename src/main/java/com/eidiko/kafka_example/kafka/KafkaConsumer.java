@@ -10,6 +10,6 @@ public class KafkaConsumer {
 
     @KafkaListener(topics = "javaguides" ,groupId = "myGroup")
     public void consume(String message){
-        log.info("Message received {} " , message);
+        log.info("String Message received {} " , message);
     }
 }

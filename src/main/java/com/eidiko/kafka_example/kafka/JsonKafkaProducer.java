@@ -18,9 +18,9 @@ public class JsonKafkaProducer {
     }
 
     public void sendMessage(User data){
-        log.info("Message sent {} ", data);
+        log.info("Json Message sent {} ", data);
         Message<User> message = MessageBuilder.
-                withPayload(data).setHeader(KafkaHeaders.TOPIC ,"javaguides")
+                withPayload(data).setHeader(KafkaHeaders.TOPIC ,"javaguides_json")
                 .build();
 
         kafkaTemplate.send(message);
